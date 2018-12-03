@@ -3,39 +3,18 @@ import time
 import os
 import ftplib
 import sys
-import master01
-from time import sleep
+
 from datetime import datetime
-'''
-#IP = input('Wprowadź adres IP czytnika: ')
-IP = '172.16.0.192'
-#PORT = input('Wprowadź port UDP: ')
-PORT = 40192
 
-Master = master01.Reader(IP, PORT)
-fw_ver = Master.cmd(0x0F, context = None)
-sleep(0.1)
-hw_ver = Master.cmd(0x0E, context = None)
-sleep(0.1)
-
-print(fw_ver)
-print(hw_ver[0])
-'''
 print("****** Debugger v1.0 ******")
 print("Podłącz konwerter USB-UART do pinów OUT8 i GND a z drugiej strony do raspberry, uruchom w ukrytej stronie mastera ext uart i upewnij się w trybie autorunning miga dioda RxD w konwerterze.")
 
-#com = input('Wprowadź nr portu COM: ')
-#ser = serial.Serial(port='COM{}'.format(com), baudrate=115200, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE, bytesize=serial.EIGHTBITS, timeout=1)
 ser = serial.Serial(port='/dev/ttyUSB0', baudrate=115200, parity=serial.PARITY_NONE, stopbits=serial.STOPBITS_ONE, bytesize=serial.EIGHTBITS, timeout=1)
 
 filesize_MB = int(input('Wprowadź maksymalny rozmiar pliku [MB] (1MB to ok. 1 minuta pracy urządzenia): '))
 filesize_b = filesize_MB*1024*1024
 filename = time.strftime("log_%Y%m%d_%H%M%S")
 filename_h = time.strftime("hex_%Y%m%d_%H%M%S")
-
-ftp = ftplib.FTP('172.16.0.111')
-ftp.login('developer', 'smart123')
-ftp.cwd('ftp/test')
 
 size = 0
 size_h = 0
@@ -70,12 +49,6 @@ while True:
                         size = os.path.getsize(path)
                         size_h = os.path.getsize(path_h)
         else:
-                        debug = open('{}.txt'.format(filename), "rb")
-                        debug_h = open('{}.txt'.format(filename_h), "rb")
-                        ftp.storlines('STOR ' + path_ftp, debug)
-                        ftp.storlines('STOR ' + path_h_ftp, debug_h)
-                        debug.close()
-                        debug_h.close()
                         size = 0
                         size_h = 0
                         filename = time.strftime("log_%Y%m%d_%H%M%S")
