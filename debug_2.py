@@ -15,7 +15,6 @@ filesize_MB = int(input('Wprowadź maksymalny rozmiar pliku [MB] (1MB to ok. 1 m
 filesize_b = filesize_MB*1024*1024
 filename = time.strftime("log_%Y%m%d_%H%M%S")
 filename_h = time.strftime("hex_%Y%m%d_%H%M%S")
-
 size = 0
 size_h = 0
 
