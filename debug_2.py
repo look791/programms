@@ -23,7 +23,7 @@ while True:
                         #postać tekstowa utf-8
                         debug = open('{}.txt'.format(filename),"a", encoding='utf-8', errors='ignore')
                         path = '/home/pi/Python_scripts/''{}.txt'.format(filename)
-                        path_ftp = '{}.txt'.format(filename)
+                        #path_ftp = '{}.txt'.format(filename)
                         ser_bytes = ser.readline()
                         ser_utf = ser_bytes.decode(encoding='utf-8', errors="ignore")
                         debug.write(datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f"))
@@ -37,7 +37,7 @@ while True:
                         # postać hex
                         debug_h = open('{}.txt'.format(filename_h),"a",encoding='utf-8',errors='ignore')
                         path_h = '/home/pi/Python_scripts/''{}.txt'.format(filename_h)
-                        path_h_ftp = '{}.txt'.format(filename_h)
+                        #path_h_ftp = '{}.txt'.format(filename_h)
                         x = ser_utf.encode('utf-8').hex()
                         debug_h.write(datetime.now().strftime("%Y-%m-%d %H:%M:%S.%f"))
                         debug_h.write(' ')
