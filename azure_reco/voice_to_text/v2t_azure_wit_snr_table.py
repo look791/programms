@@ -73,7 +73,7 @@ def signaltonoise(a, axis=0, ddof=0):
     return np.where(sd == 0, 0, m/sd)
 def speech_recognize_continuous_from_file():
     """performs continuous speech recognition with input from an audio file"""
-    speech_key, service_region = "64ceb5014e30446b901ddec92f5e0fb1", "eastus"
+    speech_key, service_region = "api_key", "region"
     speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
     audio_config = speechsdk.audio.AudioConfig(filename=globals()["audiofilename"])
     speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
