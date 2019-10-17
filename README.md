@@ -1,4 +1,4 @@
-# programms
+# debug tool
 Scripts to get frames from serial port, parse and upload to ftp
 
 crc.py - script to calculate CRC,<br>
