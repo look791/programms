@@ -10,7 +10,7 @@ except NameError:
 
 class TextToSpeech(object):
     def __init__(self, subscription_key):
-        self.subscription_key = "4db6badba34d47b8adea8a3a90ddf8c1"
+        self.subscription_key = "key"
         self.tts = input("What would you like to convert to speech: ")
         self.timestr = time.strftime("%Y%m%d-%H%M")
         self.access_token = None
