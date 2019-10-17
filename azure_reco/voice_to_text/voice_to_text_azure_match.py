@@ -15,7 +15,7 @@ except ImportError:
 # Set up the subscription info for the Language Understanding Service: Note that this is not the
 # same subscription as the one for the Speech Service. Replace with your own language understanding
 # subscription key and service region (e.g., "westus").
-intent_key = "f0138dd2633b444683b3ec23b3e501aa"
+intent_key = "key"
 intent_service_region = "westus"
 language_understanding_app_id = "YourLanguageUnderstandingAppId"
 
