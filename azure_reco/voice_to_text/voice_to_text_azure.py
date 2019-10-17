@@ -47,7 +47,7 @@ ref_long = 'i know the human being and fish can coexist peacefully'
 
 def speech_recognize_continuous_from_file():
     """performs continuous speech recognition with input from an audio file"""
-    speech_key, service_region = "64ceb5014e30446b901ddec92f5e0fb1", "eastus"
+    speech_key, service_region = "api_key", "eastus"
     speech_config = speechsdk.SpeechConfig(subscription=speech_key, region=service_region)
     audio_config = speechsdk.audio.AudioConfig(filename=globals()["audiofilename"])
     speech_recognizer = speechsdk.SpeechRecognizer(speech_config=speech_config, audio_config=audio_config)
